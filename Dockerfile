@@ -11,4 +11,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "nodemon", "src/index.js"]
+CMD [ "node", "src/index.js"]
