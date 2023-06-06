@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="bg-body">
+    <%- include('../partials/header', {page_name: "home"}); %>
+
+    <main class="container">
+      <div class="row justify-content-center">
+        <div class="col col-12 col-md-8">
+          <div class="d-flex flex-column justify-content-center">
+            <form class="my-4">
+              <h2 class="text-center fw-bold title-1">URL shortener tool</h2>
+              <div class="input-group input-group-lg flex-nowrap">
+                <input
+                  id="url"
+                  type="text"
+                  class="form-control"
+                  placeholder="Paste URL to shorten"
+                  aria-label="link"
+                  aria-describedby="addon-wrapping"
+                  onchange="resetResult()"
+                />
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="shorten()"
+                >
+                  Shorten
+                </button>
+              </div>
+            </form>
+
+            <div class="alert alert-primary" role="alert">
+              <div
+                id="result-box"
+                class="d-flex justify-content-between align-items-center opacity-0"
+              >
+                <input
+                  id="link-shorten"
+                  class="form-control"
+                  value=""
+                  style="background: transparent"
+                  disabled
+                />
+                <button class="btn btn-success" onclick="copyLink()">
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-5">
+        <div class="col col-12">
+          <h3 class="text-center fw-semibold title-2">
+            Welcome to Our URL Shortener!
+          </h3>
+          <p class="text-light fw-medium">
+            Are you tired of sharing long and complicated URLs? Look no further!
+            Our URL Shortener is here to simplify your links and make sharing a
+            breeze. Whether you're sharing links on social media, in emails, or
+            just want to tidy up your long URLs, our tool has got you covered.
+          </p>
+        </div>
+        <div class="w-100"></div>
+        <div class="col col-6">
+          <h3 class="fw-semibold title-2">How it Works:</h3>
+          <ul class="fw-medium text-light">
+            <li>Paste your long URL into the input box.</li>
+            <li>
+              Click the "Shorten" button, and we'll generate a unique, shortened
+              URL for you.
+            </li>
+            <li>Copy the shortened URL and share it anywhere you want.</li>
+          </ul>
+        </div>
+        <div class="col col-6">
+          <h3 class="fw-semibold title-2">Why Choose Our URL Shortener?</h3>
+          <ul class="fw-medium text-light">
+            <li>
+              Simple and Fast: Our tool makes the process quick and
+              straightforward. Just paste and shorten!
+            </li>
+            <li>
+              Reliable and Secure: Our service ensures the security and
+              stability of your links, so you can trust that your users will be
+              redirected to the right destination.
+            </li>
+            <li>
+              Free of Charge: Enjoy our URL shortening service without any cost.
+              It's completely free to use!
+            </li>
+          </ul>
+        </div>
+        <div class="col col-12">
+          <h3 class="text-center fw-semibold title-2">
+            Start Shortening Your URLs Today!
+          </h3>
+          <p class="fw-medium text-light">
+            With our URL Shortener, you can simplify and optimize your links
+            effortlessly. Join our community of users who have already shortened
+            thousands of URLs and experienced the benefits. Start saving
+            characters and sharing your content more effectively.
+          </p>
+          <p class="fw-medium text-light text-center">
+            Try it out now and see the power of short URLs in action!
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer><%- include('../partials/footer'); %></footer>
+    <%- include('../partials/script'); %>
+  </body>
+</html>

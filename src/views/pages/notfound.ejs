@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="bg-body">
+    <header>
+      <%- include('../partials/header', {page_name: 'notfound'}); %>
+    </header>
+
+    <main class="container" style="min-height: 100vh">
+      <div class="text-center">
+        <h1 class="text-center fw-bold title-1">Oops! Page Not Found</h1>
+        <p class="text-light fw-medium">
+          The page you're looking for seems to have gone on a short vacation.
+          Don't worry, it happens to the best of us! But fear not, we're here to
+          help.
+        </p>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col col-12 col-md-6">
+          <h2 class="fw-semibold title-2 text-center">Possible Scenarios:</h2>
+          <ul class="fw-medium text-light">
+            <li>
+              The shortened URL you clicked on may have expired or never
+              existed. Shortened URLs have a limited lifespan for security and
+              efficiency purposes.
+            </li>
+            <li>
+              There might be a typo in the URL you entered. Double-check the
+              spelling and try again.
+            </li>
+          </ul>
+        </div>
+        <div class="col col-12 col-md-6">
+          <h2 class="fw-semibold title-2 text-center">What You Can Do:</h2>
+          <ul class="fw-medium text-light">
+            <li>
+              Go back to the previous page and try clicking on the link again.
+              Sometimes a simple refresh can do the trick.
+            </li>
+            <li>
+              Start fresh by visiting our homepage to explore our services and
+              create new shortened URLs that will zip you to your destination
+              effortlessly.
+            </li>
+            <li>
+              If you believe you've reached this page in error or need further
+              assistance, please feel free to contact our support team. We'll be
+              more than happy to assist you.
+            </li>
+          </ul>
+        </div>
+
+        <div class="title-2 fw-medium text-center">
+          We apologize for any inconvenience caused. At ZipURL, we strive to
+          provide a seamless and efficient experience. We appreciate your
+          understanding and patience.
+        </div>
+      </div>
+    </main>
+
+    <footer><%- include('../partials/footer'); %></footer>
+    <%- include('../partials/script'); %>
+  </body>
+</html>
