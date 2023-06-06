@@ -66,3 +66,9 @@ function resetResult() {
     resultElm.classList.remove("opacity-100");
   }
 }
+
+$('#form-shorten').submit(function() {
+  shorten()
+
+  return false
+})

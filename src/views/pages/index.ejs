@@ -10,7 +10,7 @@
       <div class="row justify-content-center">
         <div class="col col-12 col-md-8">
           <div class="d-flex flex-column justify-content-center">
-            <form class="my-4">
+            <form id="form-shorten" class="my-4">
               <h2 class="text-center fw-bold title-1">URL shortener tool</h2>
               <div class="input-group input-group-lg flex-nowrap">
                 <input
@@ -22,13 +22,7 @@
                   aria-describedby="addon-wrapping"
                   onchange="resetResult()"
                 />
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  onclick="shorten()"
-                >
-                  Shorten
-                </button>
+                <button type="submit" class="btn btn-primary">Shorten</button>
               </div>
             </form>
 
