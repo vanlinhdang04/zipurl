@@ -3,6 +3,7 @@ import connectToDatabase from '../config/database.js';
 import {db} from '../config/database.js';
 
 import {generateShortUrl} from '../utils/generateShortUrl.js'
+import { isValidURL } from '../utils/isValidURL.js';
 
 const router = express.Router();
 
@@ -10,6 +11,11 @@ router.post('/', async (req, res, next) => {
     try {
         const { url } = req.body;
         console.log("url", url)
+
+        // Check valid url
+        if(!isValidURL(url)) {
+           return next({message: "Invalid URL"})
+        }
         
         const shortUrl = generateShortUrl(url)
         const newDoc = {

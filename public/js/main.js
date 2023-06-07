@@ -1,3 +1,4 @@
+
 function copyLink() {
   let linkElm = document.querySelector("#link-shorten");
 
@@ -5,13 +6,20 @@ function copyLink() {
   alert("Copy to clipboard");
 }
 
-function alert(msg) {
+function alert(msg, type = "info") {
   let alertElm = document.querySelector("#alert");
 
+  const types = {
+    "info": "alert-info",
+    "success": "alert-success",
+    "danger": "alert-danger",
+    "warning": "alert-warning",
+  }
+
   alertElm.innerHTML = msg;
-  alertElm?.classList?.add("c-alert-show");
+  alertElm?.classList?.add("c-alert-show", types[type]);
   setTimeout(() => {
-    alertElm.classList.remove("c-alert-show");
+    alertElm.classList.remove("c-alert-show", types[type]);
   }, 3000);
 }
 
@@ -25,6 +33,16 @@ function loading(action = true) {
   }
 }
 
+const isValidURL = (str) => {
+  let givenURL ;
+    try {
+        givenURL = new URL (str);
+    } catch (error) {
+       return false; 
+    }
+    return true;
+};
+
 function shorten() {
   let inputElm = document.querySelector("#url");
   let shortenElm = document.querySelector("#link-shorten");
@@ -32,6 +50,8 @@ function shorten() {
 
   const url = inputElm.value;
   if (!url) return alert("URL cannot be empty");
+
+  if(!isValidURL(url)) return alert("Invalid URL", 'danger')
 
   loading(true);
 
@@ -52,7 +72,7 @@ function shorten() {
   .fail(function(error) {
     console.error('Error', error)
     loading(false);
-    alert("An error has occurred")
+    alert(error?.responseJSON?.message || "An error has occurred", "danger");
   })
 
 }
